@@ -2,19 +2,35 @@ package com.carpooling.system;
 
 public class DriverModel 
 {
+	private int driverId;
+	
 	private String emailId;
 	private String password;
 	private String firstName;
 	private String lastName;
-	private int phNumber;
+	private long phNumber;
 	private String city;
 	private String typeOfVehicle;// : Personal/Taxi
-	private int SSN;
-	private int accountNumber;
-	private int carInsuranceNumber;
+	private long SSN;
+	private long accountNumber;
+	private long carInsuranceNumber;
 	private String carRegistrationNumber;
 	private String driverLicenseNumber;
+	private String typeOfDebitCard;
 	
+	public int getDriverId() {
+		return driverId;
+	}
+	public void setDriverId(int driverId) {
+		this.driverId = driverId;
+	}
+	
+	public String getTypeOfDebitCard() {
+		return typeOfDebitCard;
+	}
+	public void setTypeOfDebitCard(String typeOfDebitCard) {
+		this.typeOfDebitCard = typeOfDebitCard;
+	}
 	public String getEmailId() {
 		return emailId;
 	}
@@ -39,10 +55,10 @@ public class DriverModel
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public int getPhNumber() {
+	public long getPhNumber() {
 		return phNumber;
 	}
-	public void setPhNumber(int phNumber) {
+	public void setPhNumber(long phNumber) {
 		this.phNumber = phNumber;
 	}
 	public String getCity() {
@@ -57,22 +73,22 @@ public class DriverModel
 	public void setTypeOfVehicle(String typeOfVehicle) {
 		this.typeOfVehicle = typeOfVehicle;
 	}
-	public int getSSN() {
+	public long getSSN() {
 		return SSN;
 	}
-	public void setSSN(int sSN) {
+	public void setSSN(long sSN) {
 		SSN = sSN;
 	}
-	public int getAccountNumber() {
+	public long getAccountNumber() {
 		return accountNumber;
 	}
-	public void setAccountNumber(int accountNumber) {
+	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
-	public int getCarInsuranceNumber() {
+	public long getCarInsuranceNumber() {
 		return carInsuranceNumber;
 	}
-	public void setCarInsuranceNumber(int carInsuranceNumber) {
+	public void setCarInsuranceNumber(long carInsuranceNumber) {
 		this.carInsuranceNumber = carInsuranceNumber;
 	}
 	public String getCarRegistrationNumber() {
@@ -91,14 +107,8 @@ public class DriverModel
 	@Override
 	public String toString() 
 	{
-		/*return "DriverModel [emailId=" + emailId + ", password=" + password + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", phNumber=" + phNumber + ", city=" + city + ", typeOfVehicle=" + typeOfVehicle + ", SSN="
-				+ SSN + ", accountNumber=" + accountNumber + ", carInsuranceNumber=" + carInsuranceNumber
-				+ ", carRegistrationNumber=" + carRegistrationNumber + ", driverLicenseNumber=" + driverLicenseNumber
-				+ "]";*/
-		
-		return  emailId + "," + password + "," + firstName + "," + lastName + "," + phNumber + "," + city + "," + typeOfVehicle + ","
-		+ SSN + "," + accountNumber + "," + carInsuranceNumber
+		return  driverId + "," + firstName + "," + lastName + "," + phNumber + "," + emailId + "," + password + "," + city + "," + typeOfDebitCard + ","
+		+ accountNumber + "," + SSN + "," + typeOfVehicle + "," + carInsuranceNumber
 		+ "," + carRegistrationNumber + "," + driverLicenseNumber;
 	}
 

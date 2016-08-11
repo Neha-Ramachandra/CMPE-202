@@ -100,7 +100,7 @@ public class Parking {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public void searchVacantSlot() {
 		// Parking.writeCsvFile();
 		String[] eachParking = null;
@@ -149,7 +149,8 @@ public class Parking {
 		}
 
 	}
-
+	
+	//print recepit sent to pik carpool company
 	public void calculateParkingFee() 
 	{
 		

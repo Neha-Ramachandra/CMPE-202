@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class ClassWithMain 
 {
-	Member member;
+	Rider member;
+	Driver driver;
 	Parking parking ;
 
 	public static void main(String[] args)
@@ -22,6 +23,7 @@ public class ClassWithMain
 		System.out.println("Press 4 to withdraw membership");
 		System.out.println("Press 5 to list all parking slots");
 		System.out.println("Press 6 to search for vacant slots");
+		System.out.println("Press 7 to view payment info");
 		System.out.println("Press 0 to exit");
 		c1.decideClass();
 	}
@@ -52,8 +54,8 @@ public class ClassWithMain
 			}
 			else if(answer.toLowerCase().equals("driver"))
 			{
-				member = new Driver();
-				member.createMember();
+				driver = new Driver();
+				driver.createMember();
 			}
 			else
 			{
@@ -73,12 +75,12 @@ public class ClassWithMain
 				if(ch == 'R')
 				{
 					member = new Rider();
-					member.retrieveMember();
+					member.retrieveRiderMember();
 				}
 				else if(ch == 'D')
 				{
-					member = new Driver();
-					member.retrieveMember();
+					driver = new Driver();
+					driver.retrieveDriverMember();
 				}
 				else
 				{
@@ -99,13 +101,42 @@ public class ClassWithMain
 				decideClass();
 			}
 			break;
-
+			
+			case 3: System.out.println("Enter R To update the details by id of rider");
+					System.out.println("Enter D To update the details by id of driver");
+					char ch = input.next().charAt(0);
+			if(ch == 'R')
+			{
+				member = new Rider();
+				member.updateMemberRiderCredentials();
+			}
+			else if(ch == 'D')
+			{
+				driver = new Driver();
+				driver.retrieveDriverMember();
+			}
+			else
+			{
+				System.out.println("Press 1 to become member");
+				System.out.println("Press 2 to retrieve member details");
+				System.out.println("Press 3 to update member info");
+				System.out.println("Press 4 to withdraw membership");
+				decideClass();
+			}
+			break;
+			case 4: 
+				member = new Rider();
+			//	member.retrieveMember();
+				member.deleteMember();
+			break;
 			case 5: System.out.println("Please do parking");
 			parking.listAllSlots();
 			break;
 			
 			case 6: parking.searchVacantSlot();
-			
+			case 7: 
+				member= new Rider();
+				member.viewPaymentInfo();
 			case 0: System.out.println("Press 1 to become member");
 			System.out.println("Press 2 to retrieve member details");
 			System.out.println("Press 3 to update member info");
